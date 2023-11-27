@@ -6,6 +6,6 @@ BINDGEN_EXTRA_CLANG_ARGS = "${@bb.utils.contains('target', 'arm', \
 export BINDGEN_EXTRA_CLANG_ARGS
 
 # Copy keys.generated.rs
-do_compile:prepend () {
+do_compile_prepend () {
     install -m 644 ${WORKDIR}/keys.generated.rs ${WORKDIR}/git/key/aziot-keyd/src/keys.generated.rs
 }
